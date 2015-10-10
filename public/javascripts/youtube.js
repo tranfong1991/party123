@@ -9,7 +9,7 @@ function httpGet(url)
 }
 
 function getSongs(){
-	$.get("http://localhost:3000/get_songs", function(data){
+	$.get("http://party123.azurewebsites.net/get_songs", function(data){
 
 		var obj = $.parseJSON(JSON.stringify(data));
 		var results = obj.results;
