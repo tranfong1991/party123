@@ -46,7 +46,6 @@ router.get('/get_songs', function(req, res){
 
 		var dquery = "DELETE FROM songs";
 		connection.query(dquery, function(err, rows, fields){
-			console.log("OK");
 			connection.end();
 		});
 	});

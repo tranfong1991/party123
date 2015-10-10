@@ -25,7 +25,7 @@ function parseJSON()
 	var url = "http://gdata.youtube.com/feeds/api/videos/?v="; //concatenate with artist and song name from text
 	var jsonText = httpGet(url);
 	var json = JSON.parse(jsonText);
-	var videoUrl = 
+	//var videoUrl = 
 	//get url
 }
 
