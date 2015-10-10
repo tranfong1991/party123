@@ -14,6 +14,8 @@ var connection = mysql.createConnection({
 	database : 'party123'
 });
 
+connection.connect();
+
 router.get('/', function(req, res){
 	res.render('index');
 });
@@ -32,22 +34,18 @@ router.post('/', function(req, res){
 	var obj = JSON.parse(JSON.stringify(req.body, null, 2));
 	var query = "INSERT INTO songs (song_name) VALUES ('" + obj.Body + "')";
 
-	connection.connect();
 	connection.query(query, function(err, rows, fields){
-		connection.end();
 	});
 });
 
 router.get('/get_songs', function(req, res){
 	var query = "SELECT * FROM songs";
-	connection.connect();
 	connection.query(query, function(err, rows, fields){
 		res.send({'results' : rows});
 
-		var dquery = "DELETE FROM songs";
-		connection.query(dquery, function(err, rows, fields){
-			connection.end();
-		});
+		// var dquery = "DELETE FROM songs";
+		// connection.query(dquery, function(err, rows, fields){
+		// });
 	});
 });
 
