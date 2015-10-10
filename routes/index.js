@@ -52,4 +52,10 @@ router.get('/get_songs', function(req, res){
 	});
 });
 
+process.on( 'SIGINT', function() {
+  console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
+connection.end();
+  process.exit( );
+});
+
 module.exports = router;

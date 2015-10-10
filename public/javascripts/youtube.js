@@ -5,6 +5,7 @@ var tracks = "";
 
 
 function play(){
+	tracks="";
 	getSongs();
 	var length = queue.length;
 	for(var i = 0; i<length - 1; i++){
