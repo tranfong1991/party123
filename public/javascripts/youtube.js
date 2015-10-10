@@ -36,7 +36,7 @@ function clearSong(){
 	console.log("clear called client");
 	$.ajax({
 	    type: "DELETE",
-	    url: "http://localhost:3000/",
+	    url: "http://party123.azurewebsites.net/",
 	    success: function(msg){
 	    	$('#spotify').attr('src',"");
 	    }
@@ -45,7 +45,7 @@ function clearSong(){
 
 function getSongs(){
 	$.ajax({
-		url:"http://localhost:3000/get_songs",
+		url:"http://party123.azurewebsites.net/get_songs",
 		success: function(data){
 			var obj = $.parseJSON(JSON.stringify(data));
 			var results = obj.results;
