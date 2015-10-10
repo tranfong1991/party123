@@ -38,14 +38,17 @@ router.post('/', function(req, res){
 	});
 });
 
+router.delete('/', function(req, res){
+	console.log("called");
+	var query = "DELETE FROM songs";
+	connection.query(query, function(err, rows, fields){
+	});
+});
+
 router.get('/get_songs', function(req, res){
 	var query = "SELECT * FROM songs";
 	connection.query(query, function(err, rows, fields){
 		res.send({'results' : rows});
-
-		// var dquery = "DELETE FROM songs";
-		// connection.query(dquery, function(err, rows, fields){
-		// });
 	});
 });
 

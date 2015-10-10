@@ -31,9 +31,20 @@ function play(){
 	$('#spotify').attr('src',url + tracks);
 }
 
+function clearSong(){
+	console.log("clear called client");
+	$.ajax({
+	    type: "DELETE",
+	    url: "http://localhost:3000/",
+	    success: function(msg){
+	    	$('#spotify').attr('src',"");
+	    }
+	});
+}
+
 function getSongs(){
 	$.ajax({
-		url:"http://party123.azurewebsites.net/get_songs",
+		url:"http://localhost:3000/get_songs",
 		success: function(data){
 			var obj = $.parseJSON(JSON.stringify(data));
 			var results = obj.results;
